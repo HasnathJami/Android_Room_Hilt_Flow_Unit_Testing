@@ -12,7 +12,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class QuotesDaoTest {
+class QuotesDaoTestWithLivedata {
 
     lateinit var quotesDatabase: QuotesDatabase
     lateinit var quotesDao: QuotesDao
