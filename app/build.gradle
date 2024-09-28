@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -15,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.jsn.android_room_hilt_flow_unit_testing.CustomTestRunner"
     }
 
     buildTypes {
@@ -46,6 +47,16 @@ dependencies {
 
     testImplementation libs.androidx.core.testing
     androidTestImplementation libs.androidx.core.testing
+
+    androidTestImplementation( libs.androidx.runner)
+    testImplementation(libs.androidx.runner)
+
+    //Hilt
+    implementation libs.hilt.android // Hilt Android dependency
+    kapt libs.hilt.android.compiler // Hilt compiler for annotation processing
+    androidTestImplementation libs.hilt.android.testing
+    kaptAndroidTest libs.hilt.android.compiler
+
 
 
     //Room
